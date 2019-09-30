@@ -19,7 +19,7 @@ return current_day1;
     // console.log(lati) ;
     // console.log(longi);
    const Http = new XMLHttpRequest();
- const url='https:/api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+ const url='https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
              Http.open("GET", url,true);
             Http.send();
             Http.onreadystatechange = function() {
@@ -34,7 +34,7 @@ return current_day1;
                 }
             };
             const weeks_api = new XMLHttpRequest();
-            const forecast_url='https:/api.openweathermap.org/data/2.5/forecast?lat='+lat+'&lon='+long+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+            const forecast_url='https://api.openweathermap.org/data/2.5/forecast?lat='+lat+'&lon='+long+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
             weeks_api.open("GET", forecast_url,true);
             weeks_api.send();
             weeks_api.onreadystatechange = function() {
