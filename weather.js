@@ -20,9 +20,9 @@ return current_day1;
   if (curHr < 12) {
     document.getElementById("welcomeMsg").innerHTML='Good Morning';
   } else if (curHr < 18) {
-    console.log('good afternoon')
+    document.getElementById("welcomeMsg").innerHTML='Good Afternoon';
   } else {
-    console.log('good evening')
+    document.getElementById("welcomeMsg").innerHTML='Good Evening';
   }
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -38,7 +38,7 @@ return current_day1;
     // console.log(lati) ;
     // console.log(longi);
    const Http = new XMLHttpRequest();
- const url='https:/api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+ const url='https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
              Http.open("GET", url,true);
             Http.send();
             Http.onreadystatechange = function() {
@@ -53,7 +53,7 @@ return current_day1;
                 }
             };
             const weeks_api = new XMLHttpRequest();
-            const forecast_url='https:/api.openweathermap.org/data/2.5/forecast?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
+            const forecast_url='https://api.openweathermap.org/data/2.5/forecast?lat='+lati+'&lon='+longi+'&APPID=6cfb00bd8fc705d673be0522ef4efdfe';
             weeks_api.open("GET", forecast_url,true);
             weeks_api.send();
             weeks_api.onreadystatechange = function() {
@@ -151,40 +151,40 @@ let day3= filtered_days.filter(item=>{
    document.querySelector(".icon4").innerHTML=`<img src='icons/${icon5}.png'/>`;
    let icon6=day6[0].weather[0].icon;
 //    document.querySelector(".icon5").innerHTML=`<img src='icons/${icon5}.png'/>`;
-    const max1=avg_temp_max(day2);
+    const max1=temp_max(day2);
     const b1=max1-273;
    document.getElementById("max_temp_2").innerHTML=b1.toPrecision(2);
-   const min1=avg_temp_min(day2);
+   const min1=temp_min(day2);
    const a_m_t1=min1-273;
    
   document.getElementById("min_temp_2").innerHTML= a_m_t1.toPrecision(2);
-    const max2=avg_temp_max(day3);
+    const max2=temp_max(day3);
     const b2=max2-273;
     document.getElementById("max_temp_3").innerHTML=b2.toPrecision(2);
-    const min2=avg_temp_min(day3);
+    const min2=temp_min(day3);
     const a_m_t2=min2-273;
    document.getElementById("min_temp_3").innerHTML= a_m_t2.toPrecision(2);
-    const max3=avg_temp_max(day4);
+    const max3=temp_max(day4);
     const b3=max3-273;
     document.getElementById("max_temp_4").innerHTML=b3.toPrecision(2);
-    const min3=avg_temp_min(day4);
+    const min3=temp_min(day4);
     const a_m_t3=min3-273;
    document.getElementById("min_temp_4").innerHTML= a_m_t3.toPrecision(2);
-    const max4=avg_temp_max(day5);
+    const max4=temp_max(day5);
     const b4=max4-273;
     document.getElementById("max_temp_5").innerHTML=b4.toPrecision(2);
-    const min4=avg_temp_min(day5);
+    const min4=temp_min(day5);
     const a_m_t4=min3-273;
    document.getElementById("min_temp_5").innerHTML= a_m_t4.toPrecision(2);
 //    document.getElementById("min_temp_6").innerHTML= a_m_t4.toPrecision(2);
 //    document.getElementById("max_temp_6").innerHTML=b2.toPrecision(2);
   }
   
-  function avg_temp_max(data) {
+  function temp_max(data) {
     return  avg_max_temp = Math.max.apply(Math, data.map(function(e) { return e.main.temp_max; }))
 
  }
- function avg_temp_min(data) {
+ function temp_min(data) {
   return  avg_max_temp = Math.min.apply(Math, data.map(function(e) { return e.main.temp_min; }))
 }
 

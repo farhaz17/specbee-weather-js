@@ -1,0 +1,22 @@
+$primary: #000;
+
+@mixin bg-color($bg){
+    background-color:$bg;
+}
+
+/* use the variables */
+.container--rot{
+  @include bg-color(red);
+  height: 200px ;
+  width: 200px;
+  margin-left: 200px;
+  margin-top: 200px;
+  box-sizing: border-box;
+  border: 30px solid green;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+transition:transform .8s ease-in-out;
+}
+.container--rot:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
