@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/"> -->
+    <title>Weather App</title>
+  
+</head>
+<body onload="getLocation()">
+  <center>
+    
+    
+   
+    <div class="" style="width: 100%;">
+       <div class="card-body">
+     
+          <div class="row">
+              
+            <div class="col-md-4 ">
+                <h1 id="weekDay">Day</h1> 
+                <div class="icon">
+                    <img src="icons/unknown.png" alt="" class="logo--icon">
+                </div>
+                <div class="temperature">
+                    <p id="highest_temp">-</p>|<p id="lowest_temp">-</p>
+                </div>
+     
+            </div>
+            <div class="col-md-8 city_name_container">
+                    <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              Select city
+                            </button>
+                            <div class="dropdown-menu">
+                              <button onclick="getCity('51.5085','-0.1258')" class="dropdown-item">London</button>
+                              <button onclick="getCity('40.7306', '-73.9867')" class="dropdown-item">New York</button>
+                              <button onclick="getCity('25.2684', '55.2962')" class="dropdown-item">Dubai</button>
+                              <button onclick="getCity('52.3728', '4.8936')" class="dropdown-item">Amsterdam</button>
+                            </div>
+                          </div>
+                <h3 id="welcomeMsg" ></h3>
+                <h1 id="city_name">City Name </h1> 
+            </div>
+        </div>
+        <div class="row second_row">
+            <div class="col-md-3">
+                <h4 id="day1">co1</h4>
+                <div class="icon1">
+                    <img  class="logo--icon" src="icons/unknown.png" alt="">
+                </div>
+                
+                <div class=".temperature">
+                 <p id="max_temp_2"></p>|<p id="min_temp_2"></p> 
+                </div>
+       </div>
+            <div class="col-md-3">
+                    <h4 id="day2">co1</h4>
+                <div class="icon2">
+                    <img  class="logo--icon" src="icons/unknown.png" alt="">
+                </div>
+             
+                    <p id="max_temp_3"></p> | <p id="min_temp_3"></p>
+             
+             
+              
+            </div>
+            <div class="col-md-3">
+                    <h4 id="day3">co1</h4>
+                <div class="icon3">
+                    <img  class="logo--icon" src="icons/unknown.png" alt="">
+                </div>
+               
+                    <p id="max_temp_4"></p> | <p id="min_temp_4"></p>
+              
+              
+              
+            </div>
+            <div class="col-md-3">
+                    <h4 id="day4">co1</h4>
+                <div class="icon4">
+                    <img  class="logo--icon" src="icons/unknown.png" alt="">
+                </div>
+               <p id="max_temp_5"></p> | <p id="min_temp_5"></p>
+               
+             
+            </div>
+            
+        </div>
+       
+      </div>
+      
+  
+  </center> 
+ 
+    <script src="weather.js"></script> 
+    <script src="getcity.js"></script>   
+
+
+</body>
+</html>
